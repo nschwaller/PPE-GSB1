@@ -33,10 +33,10 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            //this.button1 = new System.Windows.Forms.Button();
             this.DS_test = new System.Data.DataSet();
             this.DGV_test = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
+            //this.button1 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DS_test)).BeginInit();
@@ -57,7 +57,7 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.button1);
+            //this.tabPage1.Controls.Add(this.button1);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -69,7 +69,7 @@
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.DGV_test);
-            this.tabPage2.Controls.Add(this.button1);
+            //this.tabPage2.Controls.Add(this.button1);
             this.tabPage2.Controls.Add(this.label1);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
@@ -100,13 +100,13 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(469, 184);
+            /*this.button1.Location = new System.Drawing.Point(469, 184);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 1;
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.Button1_Click);
+            this.button1.Click += new System.EventHandler(this.Button1_Click);*/
             // 
             // DS_test
             // 
@@ -122,12 +122,12 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(0, 0);
+            /*this.button1.Location = new System.Drawing.Point(0, 0);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(1020, 579);
             this.button1.TabIndex = 0;
             this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = true;*/
             // 
             // Form1
             // 
@@ -154,7 +154,7 @@
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button1;
+        //private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label1;
         private System.Data.DataSet DS_test;
         private System.Windows.Forms.DataGridView DGV_test;
