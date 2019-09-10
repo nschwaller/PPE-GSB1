@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PPE_GSB1
 {
-    class parapharmacie
+    class parapharmacie : officine
     {
     }
 }
