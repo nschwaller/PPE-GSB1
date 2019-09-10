@@ -14,9 +14,8 @@ namespace PPE_GSB1
     {
         public Form1()
         {
-            //romain
-            //romain 2
             InitializeComponent();
+
         }
     }
 }
