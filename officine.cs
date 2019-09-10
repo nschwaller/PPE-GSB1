@@ -8,12 +8,12 @@ namespace PPE_GSB1
 {
     public class officine
     {
-        private string codePostal;
-        private string ville;
-        private string numeroTel;
-        private string numeroContact;
-        private string nom;
-        private int id;
+        protected string codePostal;
+        protected string ville;
+        protected string numeroTel;
+        protected string numeroContact;
+        protected string nom;
+        protected int id;
 
         public officine()
         {
