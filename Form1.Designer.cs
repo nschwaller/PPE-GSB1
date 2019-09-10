@@ -36,10 +36,12 @@
             this.button1 = new System.Windows.Forms.Button();
             this.DS_test = new System.Data.DataSet();
             this.DGV_test = new System.Windows.Forms.DataGridView();
+            this.button1 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DS_test)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_test)).BeginInit();
+            this.tabPage1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -55,12 +57,13 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.button1);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(1023, 575);
             this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "tabPage1";
+            this.tabPage1.Text = "Stockage";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // tabPage2
@@ -117,6 +120,15 @@
             this.DGV_test.Size = new System.Drawing.Size(240, 150);
             this.DGV_test.TabIndex = 1;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(0, 0);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(1020, 579);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -130,6 +142,7 @@
             this.tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DS_test)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_test)).EndInit();
+            this.tabPage1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -140,6 +153,7 @@
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label1;
         private System.Data.DataSet DS_test;
