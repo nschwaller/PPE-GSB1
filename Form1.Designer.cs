@@ -33,15 +33,17 @@
             this.button1 = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+
             this.label1 = new System.Windows.Forms.Label();
             //this.button1 = new System.Windows.Forms.Button();
             this.DS_test = new System.Data.DataSet();
             this.DGV_test = new System.Windows.Forms.DataGridView();
             //this.button1 = new System.Windows.Forms.Button();
+
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DS_test)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DGV_test)).BeginInit();
+//            ((System.ComponentModel.ISupportInitialize)(this.DS_test)).BeginInit();
+//            ((System.ComponentModel.ISupportInitialize)(this.DGV_test)).BeginInit();
             this.tabPage1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -78,9 +80,9 @@
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.DGV_test);
+//            this.tabPage2.Controls.Add(this.DGV_test);
             //this.tabPage2.Controls.Add(this.button1);
-            this.tabPage2.Controls.Add(this.label1);
+//            this.tabPage2.Controls.Add(this.label1);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -99,6 +101,7 @@
             this.tabPage3.Text = "tabPage3";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
+
             // label1
             // 
             this.label1.AutoSize = true;
@@ -148,6 +151,7 @@
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
             // 
+
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -159,8 +163,8 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DS_test)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DGV_test)).EndInit();
+//            ((System.ComponentModel.ISupportInitialize)(this.DS_test)).EndInit();
+//            ((System.ComponentModel.ISupportInitialize)(this.DGV_test)).EndInit();
             this.tabPage1.ResumeLayout(false);
             this.ResumeLayout(false);
 
