@@ -14,5 +14,16 @@ namespace PPE_GSB1
         {
 
         }
+
+        public int getregistre()
+        {
+            return this.registre_pha;
+
+        }
+
+        public void setregistre(int leregistre)
+        {
+            this.registre_pha = leregistre;
+        }
     }
 }
