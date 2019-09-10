@@ -15,7 +15,13 @@ namespace PPE_GSB1
         public Form1()
         {
             InitializeComponent();
+            SQL REQ = new SQL();
 
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }
