@@ -30,38 +30,41 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.quantiteCommande = new System.Windows.Forms.TextBox();
+            this.ajoutMedoc = new System.Windows.Forms.ComboBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.selecOfficine = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.ajoutQuantite = new System.Windows.Forms.TextBox();
+            this.supprimeStock = new System.Windows.Forms.Button();
+            this.ajoutStock = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.label6 = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Commande = new System.Windows.Forms.TabPage();
+            this.label7 = new System.Windows.Forms.Label();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.DS_test = new System.Data.DataSet();
             this.DGV_test = new System.Windows.Forms.DataGridView();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label6 = new System.Windows.Forms.Label();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.selecMedoc = new System.Windows.Forms.ComboBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.Commande.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DS_test)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_test)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -79,18 +82,6 @@
             // 
             this.tabPage1.Controls.Add(this.panel2);
             this.tabPage1.Controls.Add(this.panel1);
-            this.tabPage1.Controls.Add(this.textBox2);
-            this.tabPage1.Controls.Add(this.comboBox2);
-            this.tabPage1.Controls.Add(this.label9);
-            this.tabPage1.Controls.Add(this.label8);
-            this.tabPage1.Controls.Add(this.comboBox1);
-            this.tabPage1.Controls.Add(this.label5);
-            this.tabPage1.Controls.Add(this.label4);
-            this.tabPage1.Controls.Add(this.label3);
-            this.tabPage1.Controls.Add(this.label2);
-            this.tabPage1.Controls.Add(this.textBox1);
-            this.tabPage1.Controls.Add(this.button3);
-            this.tabPage1.Controls.Add(this.button2);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -98,6 +89,145 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Stockage";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // panel2
+            // 
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel2.Controls.Add(this.label9);
+            this.panel2.Controls.Add(this.label3);
+            this.panel2.Controls.Add(this.ajoutStock);
+            this.panel2.Controls.Add(this.ajoutQuantite);
+            this.panel2.Controls.Add(this.ajoutMedoc);
+            this.panel2.Controls.Add(this.label5);
+            this.panel2.Location = new System.Drawing.Point(6, 6);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(495, 563);
+            this.panel2.TabIndex = 13;
+            // 
+            // panel1
+            // 
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.selecMedoc);
+            this.panel1.Controls.Add(this.selecOfficine);
+            this.panel1.Controls.Add(this.quantiteCommande);
+            this.panel1.Controls.Add(this.supprimeStock);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.label8);
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Location = new System.Drawing.Point(530, 6);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(487, 563);
+            this.panel1.TabIndex = 12;
+            // 
+            // quantiteCommande
+            // 
+            this.quantiteCommande.Location = new System.Drawing.Point(373, 262);
+            this.quantiteCommande.Name = "quantiteCommande";
+            this.quantiteCommande.Size = new System.Drawing.Size(100, 20);
+            this.quantiteCommande.TabIndex = 11;
+            // 
+            // ajoutMedoc
+            // 
+            this.ajoutMedoc.FormattingEnabled = true;
+            this.ajoutMedoc.Location = new System.Drawing.Point(16, 134);
+            this.ajoutMedoc.Name = "ajoutMedoc";
+            this.ajoutMedoc.Size = new System.Drawing.Size(214, 21);
+            this.ajoutMedoc.TabIndex = 10;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(16, 80);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(217, 20);
+            this.label9.TabIndex = 9;
+            this.label9.Text = "Sélectionner le Médicaments:";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(30, 99);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(221, 20);
+            this.label8.TabIndex = 8;
+            this.label8.Text = "Saisir l\'officine de destination: ";
+            // 
+            // selecOfficine
+            // 
+            this.selecOfficine.FormattingEnabled = true;
+            this.selecOfficine.Location = new System.Drawing.Point(34, 144);
+            this.selecOfficine.Name = "selecOfficine";
+            this.selecOfficine.Size = new System.Drawing.Size(217, 21);
+            this.selecOfficine.TabIndex = 7;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(12, 205);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(210, 20);
+            this.label5.TabIndex = 6;
+            this.label5.Text = "Saisir la Quantitée à Ajouter:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(31, 212);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(326, 20);
+            this.label4.TabIndex = 5;
+            this.label4.Text = "Saisir le Nom et la Quantitée du Médicament:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(12, 11);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(387, 25);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Ajouter des Médicaments dans les Stocks: ";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(28, 23);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(461, 29);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Envoyer des Médicaments à une Officine: ";
+            // 
+            // ajoutQuantite
+            // 
+            this.ajoutQuantite.Location = new System.Drawing.Point(16, 261);
+            this.ajoutQuantite.Name = "ajoutQuantite";
+            this.ajoutQuantite.Size = new System.Drawing.Size(100, 20);
+            this.ajoutQuantite.TabIndex = 2;
+            // 
+            // supprimeStock
+            // 
+            this.supprimeStock.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.supprimeStock.Location = new System.Drawing.Point(3, 329);
+            this.supprimeStock.Name = "supprimeStock";
+            this.supprimeStock.Size = new System.Drawing.Size(477, 80);
+            this.supprimeStock.TabIndex = 1;
+            this.supprimeStock.Text = "ENVOYER";
+            this.supprimeStock.UseVisualStyleBackColor = true;
+            // 
+            // ajoutStock
+            // 
+            this.ajoutStock.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ajoutStock.Location = new System.Drawing.Point(16, 329);
+            this.ajoutStock.Name = "ajoutStock";
+            this.ajoutStock.Size = new System.Drawing.Size(472, 80);
+            this.ajoutStock.TabIndex = 0;
+            this.ajoutStock.Text = "AJOUTER";
+            this.ajoutStock.UseVisualStyleBackColor = true;
             // 
             // tabPage2
             // 
@@ -111,6 +241,23 @@
             this.tabPage2.Text = "Stock";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(471, 68);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(35, 13);
+            this.label6.TabIndex = 1;
+            this.label6.Text = "label6";
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(498, 203);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(240, 150);
+            this.dataGridView1.TabIndex = 0;
+            // 
             // Commande
             // 
             this.Commande.Controls.Add(this.label7);
@@ -122,6 +269,24 @@
             this.Commande.TabIndex = 2;
             this.Commande.Text = "Commande";
             this.Commande.UseVisualStyleBackColor = true;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(320, 21);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(370, 33);
+            this.label7.TabIndex = 1;
+            this.label7.Text = "Historique des commandes";
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(35, 68);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.Size = new System.Drawing.Size(966, 490);
+            this.dataGridView2.TabIndex = 0;
             // 
             // button1
             // 
@@ -153,156 +318,13 @@
             this.DGV_test.Size = new System.Drawing.Size(240, 150);
             this.DGV_test.TabIndex = 1;
             // 
-            // button2
+            // selecMedoc
             // 
-            this.button2.Location = new System.Drawing.Point(197, 188);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 0;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(505, 188);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 1;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(393, 116);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 2;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(145, 260);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 13);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "label2";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(353, 297);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(35, 13);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "label3";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(372, 399);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(35, 13);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "label4";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(171, 399);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(35, 13);
-            this.label5.TabIndex = 6;
-            this.label5.Text = "label5";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(393, 35);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 7;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(498, 203);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(240, 150);
-            this.dataGridView1.TabIndex = 0;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(471, 68);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(35, 13);
-            this.label6.TabIndex = 1;
-            this.label6.Text = "label6";
-            // 
-            // dataGridView2
-            // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(35, 68);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(966, 490);
-            this.dataGridView2.TabIndex = 0;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(320, 21);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(370, 33);
-            this.label7.TabIndex = 1;
-            this.label7.Text = "Historique des commandes";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(113, 78);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(35, 13);
-            this.label8.TabIndex = 8;
-            this.label8.Text = "label8";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(170, 116);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(35, 13);
-            this.label9.TabIndex = 9;
-            this.label9.Text = "label9";
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(225, 60);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 21);
-            this.comboBox2.TabIndex = 10;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(54, 164);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 11;
-            // 
-            // panel1
-            // 
-            this.panel1.Location = new System.Drawing.Point(750, 342);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(200, 100);
-            this.panel1.TabIndex = 12;
-            // 
-            // panel2
-            // 
-            this.panel2.Location = new System.Drawing.Point(776, 178);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(200, 100);
-            this.panel2.TabIndex = 13;
+            this.selecMedoc.FormattingEnabled = true;
+            this.selecMedoc.Location = new System.Drawing.Point(34, 261);
+            this.selecMedoc.Name = "selecMedoc";
+            this.selecMedoc.Size = new System.Drawing.Size(323, 21);
+            this.selecMedoc.TabIndex = 12;
             // 
             // Form1
             // 
@@ -314,15 +336,18 @@
             this.Text = "Form1";
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.Commande.ResumeLayout(false);
             this.Commande.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DS_test)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_test)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -338,24 +363,25 @@
         private System.Windows.Forms.Label label1;
         private System.Data.DataSet DS_test;
         private System.Windows.Forms.DataGridView DGV_test;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox selecOfficine;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox ajoutQuantite;
+        private System.Windows.Forms.Button supprimeStock;
+        private System.Windows.Forms.Button ajoutStock;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.TextBox quantiteCommande;
+        private System.Windows.Forms.ComboBox ajoutMedoc;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.ComboBox selecMedoc;
     }
 }
 
