@@ -43,6 +43,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Commande = new System.Windows.Forms.TabPage();
+            this.label10 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.ajoutMedoc = new System.Windows.Forms.ComboBox();
@@ -55,7 +56,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.DS_test = new System.Data.DataSet();
             this.DGV_test = new System.Windows.Forms.DataGridView();
-            this.label10 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -88,7 +88,7 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.BackColor = System.Drawing.Color.Silver;
+            this.tabPage1.BackColor = System.Drawing.Color.Gainsboro;
             this.tabPage1.Controls.Add(this.panel2);
             this.tabPage1.Controls.Add(this.panel1);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
@@ -177,7 +177,7 @@
             // 
             // tabPage2
             // 
-            this.tabPage2.BackColor = System.Drawing.Color.Silver;
+            this.tabPage2.BackColor = System.Drawing.Color.Gainsboro;
             this.tabPage2.Controls.Add(this.label6);
             this.tabPage2.Controls.Add(this.dataGridView1);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
@@ -206,7 +206,7 @@
             // 
             // Commande
             // 
-            this.Commande.BackColor = System.Drawing.Color.Silver;
+            this.Commande.BackColor = System.Drawing.Color.Gainsboro;
             this.Commande.Controls.Add(this.label10);
             this.Commande.Controls.Add(this.label7);
             this.Commande.Controls.Add(this.dataGridView2);
@@ -216,6 +216,16 @@
             this.Commande.Size = new System.Drawing.Size(1023, 575);
             this.Commande.TabIndex = 2;
             this.Commande.Text = "Commande";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(343, 537);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(397, 18);
+            this.label10.TabIndex = 2;
+            this.label10.Text = "Séléctionner puis supprimer les lignes avec le bouton suppr";
             // 
             // label7
             // 
@@ -239,9 +249,6 @@
             this.dataGridView2.ReadOnly = true;
             this.dataGridView2.Size = new System.Drawing.Size(965, 453);
             this.dataGridView2.TabIndex = 0;
-//            this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView2_CellContentClick);
-      //      this.dataGridView2.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.DataGridView2_RowsRemoved);
-     //       this.dataGridView2.UserDeletedRow += new System.Windows.Forms.DataGridViewRowEventHandler(this.DataGridView2_UserDeletedRow);
             this.dataGridView2.UserDeletingRow += new System.Windows.Forms.DataGridViewRowCancelEventHandler(this.DataGridView2_UserDeletingRow);
             // 
             // ajoutMedoc
@@ -328,17 +335,6 @@
             this.DGV_test.Name = "DGV_test";
             this.DGV_test.Size = new System.Drawing.Size(240, 150);
             this.DGV_test.TabIndex = 1;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(343, 537);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(397, 18);
-            this.label10.TabIndex = 2;
-            this.label10.Text = "Séléctionner puis supprimer les lignes avec le bouton suppr";
-        //    this.label10.Click += new System.EventHandler(this.Label10_Click);
             // 
             // Form1
             // 
