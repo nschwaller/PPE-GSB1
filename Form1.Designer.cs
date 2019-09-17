@@ -54,6 +54,7 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.button4 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -114,6 +115,7 @@
             // Commande
             // 
             this.Commande.BackColor = System.Drawing.Color.Gray;
+            this.Commande.Controls.Add(this.button4);
             this.Commande.Controls.Add(this.label7);
             this.Commande.Controls.Add(this.dataGridView2);
             this.Commande.Location = new System.Drawing.Point(4, 22);
@@ -244,7 +246,7 @@
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Location = new System.Drawing.Point(35, 68);
             this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(966, 490);
+            this.dataGridView2.Size = new System.Drawing.Size(972, 453);
             this.dataGridView2.TabIndex = 0;
             // 
             // label7
@@ -304,6 +306,16 @@
             this.panel2.Size = new System.Drawing.Size(200, 100);
             this.panel2.TabIndex = 13;
             // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(447, 527);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(124, 27);
+            this.button4.TabIndex = 2;
+            this.button4.Text = "Supprimer";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.Button4_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -356,6 +368,7 @@
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Button button4;
     }
 }
 

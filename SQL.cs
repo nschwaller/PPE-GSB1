@@ -32,6 +32,11 @@ namespace PPE_GSB1
 
             return information;
         }
+
+        public string getconn()
+        {
+            return "server=" + this.IP + ";user=" + this.USER + ";database=" + this.DATABASE + ";port=3306;password=" + this.MDP;
+        }
     }
 }
 
