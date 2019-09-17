@@ -13,11 +13,18 @@ namespace PPE_GSB1
 {
     public partial class Form1 : Form
     {
+        public void initialisationDataView()
+        {
+            SQL connectBase = new SQL();
+            DV_Affiche_Hist.DataSource = connectBase.ReqHistorique().Tables[0];
+            DV_aff_Stock.DataSource = connectBase.ReqStock().Tables[0];
+        }
         public Form1()
         {
-            SQL REQ = new SQL();
+            /*SQL REQ = new SQL();*/
             InitializeComponent();
-            MySqlConnection maConnexion = new MySqlConnection(REQ.getconn());
+            initialisationDataView();
+            /*MySqlConnection maConnexion = new MySqlConnection(REQ.getconn());
             maConnexion.Open();
             string sql = "SELECT id_hist as id_commande,date_hist as date_commande,quantite_hist as quantite_medoc, nom_off.Officine  FROM ";
             MySqlCommand maReq = new MySqlCommand(sql, maConnexion);
@@ -36,21 +43,10 @@ namespace PPE_GSB1
             MySqlDataAdapter mySqlDataAdapter = new MySqlDataAdapter(sql, maConnexion);
             DataSet DS = new DataSet();
             mySqlDataAdapter.Fill(DS);
-            dataGridView1.DataSource = DS.Tables[0];
+            DV_Affiche_Hist.DataSource = DS.Tables[0];
 
-            maConnexion.Close();
-
-        }
-
-        private void Button1_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void Button4_Click(object sender, EventArgs e)
-        {
+            maConnexion.Close();*/
 
         }
-   
     }
 }

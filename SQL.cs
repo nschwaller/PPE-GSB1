@@ -11,31 +11,41 @@ namespace PPE_GSB1
     class SQL
     {
         private string IP = "172.19.0.4";
-        private string USER = "phpmyadmin";
+        private string USER = "root";
         private string MDP = "0550002D";
         private string DATABASE = "GSB";
-        MySqlConnection conn;
+        private MySqlConnection conn;
         public SQL()
         {
             string connStr = "server=" + this.IP + ";user=" + this.USER + ";database=" + this.DATABASE + ";port=3306;password=" + this.MDP;
             conn = new MySqlConnection(connStr);
         }
-        public string test() {
-            conn.Open();
-            string information = "rien";
-            string req = "SELECT * FROM Medicament";
-            MySqlCommand command = new MySqlCommand(req, this.conn);            
-            DataSet DS = new DataSet();
-            MySqlDataAdapter rep = new MySqlDataAdapter(req, this.conn);
-            rep.Fill(DS);
-            conn.Close();
-
-            return information;
+        public MySqlConnection GetConnecttion()
+        {
+            return conn;
         }
 
         public string getconn()
         {
             return "server=" + this.IP + ";user=" + this.USER + ";database=" + this.DATABASE + ";port=3306;password=" + this.MDP;
+        }
+        public DataSet ReqHistorique()
+        {
+            string requete = "SELECT date_hist as Date,quantite_hist as Quantiter,nom_med as Nom FROM Historique INNER JOIN Medicament ON Medicament.id_med = Historique.id_med ORDER BY date_hist DESC";
+            MySqlCommand maReq = new MySqlCommand(requete, this.conn);
+            MySqlDataAdapter mySqlDataAdapter = new MySqlDataAdapter(requete, this.conn);
+            DataSet DS = new DataSet();
+            mySqlDataAdapter.Fill(DS);
+            return DS;
+        }
+        public DataSet ReqStock()
+        {
+            string requete = "SELECT SUM(quantite_hist) as Quantite, nom_med as Medicament FROM Medicament INNER JOIN Historique ON Medicament.id_med = Historique.id_med GROUP By Historique.id_med ORDER BY Quantite DESC, Medicament ASC";
+            MySqlCommand maReq = new MySqlCommand(requete, this.conn);
+            MySqlDataAdapter mySqlDataAdapter = new MySqlDataAdapter(requete, this.conn);
+            DataSet DS = new DataSet();
+            mySqlDataAdapter.Fill(DS);
+            return DS;
         }
     }
 }
