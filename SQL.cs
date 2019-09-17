@@ -11,7 +11,7 @@ namespace PPE_GSB1
     class SQL
     {
         private string IP = "172.19.0.4";
-        private string USER = "phpmyadmin";
+        private string USER = "root";
         private string MDP = "0550002D";
         private string DATABASE = "GSB";
         MySqlConnection conn;

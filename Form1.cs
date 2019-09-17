@@ -13,44 +13,45 @@ namespace PPE_GSB1
 {
     public partial class Form1 : Form
     {
-        public Form1()
+
+        public void datagried()
         {
+            this.dataGridView2.DataSource = null;
             SQL REQ = new SQL();
-            InitializeComponent();
             MySqlConnection maConnexion = new MySqlConnection(REQ.getconn());
             maConnexion.Open();
-            string sql = "SELECT id_hist as id_commande,date_hist as date_commande,quantite_hist as quantite_medoc, nom_off.Officine  FROM ";
+            string sql = "SELECT id_hist as id_commande,date_hist as date_commande,quantite_hist as quantite_medoc, Officine.nom_off as Officine, Medicament.nom_med as Medicament FROM Historique INNER JOIN Officine ON Historique.id_off = Officine.id_off INNER JOIN Medicament ON Historique.id_med = Medicament.id_med WHERE Historique.id_off IS NOT NULL ORDER BY date_hist ASC;";
             MySqlCommand maReq = new MySqlCommand(sql, maConnexion);
 
-            // Afficher les résultats ligne par ligne :
-            MySqlDataReader resultats = maReq.ExecuteReader();
-            while (resultats.Read())
-            {
-                MessageBox.Show(resultats[2].ToString());
-            }
-
-            // Executer des requêtes non-SELECT (ne retournant aucun résultat)
-            maReq.ExecuteNonQuery();
-
-            // Affichage des résultats dans un DataGridView (méthode du DataSet)
             MySqlDataAdapter mySqlDataAdapter = new MySqlDataAdapter(sql, maConnexion);
             DataSet DS = new DataSet();
             mySqlDataAdapter.Fill(DS);
-            dataGridView1.DataSource = DS.Tables[0];
+            dataGridView2.DataSource = DS.Tables[0];
 
             maConnexion.Close();
-
+            dataGridView2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+        }
+        public Form1()
+        {          
+            InitializeComponent();
+            datagried();
         }
 
-        private void Button1_Click(object sender, EventArgs e)
+        private void DataGridView2_UserDeletingRow(object sender, DataGridViewRowCancelEventArgs e)
         {
-            
+            foreach (DataGridViewRow row in dataGridView2.SelectedRows)
+            {
+                string id;
+                id=row.Cells[0].Value.ToString();
+                SQL REQ = new SQL();
+                MySqlConnection maConnexion = new MySqlConnection(REQ.getconn());
+                maConnexion.Open();
+                string sql = "DELETE FROM Historique WHERE id_hist =" + id ;
+                MySqlCommand maReq = new MySqlCommand(sql, maConnexion);
+                maReq.ExecuteNonQuery();
+                maConnexion.Close();
+            }
         }
 
-        private void Button4_Click(object sender, EventArgs e)
-        {
-
-        }
-   
     }
 }
