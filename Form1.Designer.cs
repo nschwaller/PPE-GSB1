@@ -41,7 +41,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.label6 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.DV_Affiche_Hist = new System.Windows.Forms.DataGridView();
             this.Commande = new System.Windows.Forms.TabPage();
             this.label10 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -56,15 +56,19 @@
             this.label1 = new System.Windows.Forms.Label();
             this.DS_test = new System.Data.DataSet();
             this.DGV_test = new System.Windows.Forms.DataGridView();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.DV_aff_Stock = new System.Windows.Forms.DataGridView();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DV_Affiche_Hist)).BeginInit();
             this.Commande.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DS_test)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_test)).BeginInit();
+            this.tabPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DV_aff_Stock)).BeginInit();
             this.SuspendLayout();
             // 
             // selecMedoc
@@ -78,8 +82,9 @@
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.Commande);
+            this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Location = new System.Drawing.Point(12, 12);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -179,30 +184,38 @@
             // 
             this.tabPage2.BackColor = System.Drawing.Color.Gainsboro;
             this.tabPage2.Controls.Add(this.label6);
-            this.tabPage2.Controls.Add(this.dataGridView1);
+            this.tabPage2.Controls.Add(this.DV_Affiche_Hist);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(1023, 575);
             this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Stock";
+            this.tabPage2.Text = "Historique";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(471, 68);
+            this.label6.Location = new System.Drawing.Point(360, 17);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(35, 13);
+            this.label6.Size = new System.Drawing.Size(0, 13);
             this.label6.TabIndex = 1;
-            this.label6.Text = "label6";
             // 
-            // dataGridView1
+            // DV_Affiche_Hist
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(498, 203);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(240, 150);
-            this.dataGridView1.TabIndex = 0;
+            this.DV_Affiche_Hist.AllowUserToAddRows = false;
+            this.DV_Affiche_Hist.AllowUserToDeleteRows = false;
+            this.DV_Affiche_Hist.AllowUserToResizeColumns = false;
+            this.DV_Affiche_Hist.AllowUserToResizeRows = false;
+            this.DV_Affiche_Hist.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.DV_Affiche_Hist.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllHeaders;
+            this.DV_Affiche_Hist.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.DV_Affiche_Hist.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DV_Affiche_Hist.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnKeystroke;
+            this.DV_Affiche_Hist.Location = new System.Drawing.Point(31, 33);
+            this.DV_Affiche_Hist.Name = "DV_Affiche_Hist";
+            this.DV_Affiche_Hist.ReadOnly = true;
+            this.DV_Affiche_Hist.Size = new System.Drawing.Size(977, 522);
+            this.DV_Affiche_Hist.TabIndex = 0;
             // 
             // Commande
             // 
@@ -336,6 +349,30 @@
             this.DGV_test.Size = new System.Drawing.Size(240, 150);
             this.DGV_test.TabIndex = 1;
             // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.DV_aff_Stock);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Size = new System.Drawing.Size(1023, 575);
+            this.tabPage3.TabIndex = 3;
+            this.tabPage3.Text = "Stock";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // DV_aff_Stock
+            // 
+            this.DV_aff_Stock.AllowUserToAddRows = false;
+            this.DV_aff_Stock.AllowUserToDeleteRows = false;
+            this.DV_aff_Stock.AllowUserToResizeColumns = false;
+            this.DV_aff_Stock.AllowUserToResizeRows = false;
+            this.DV_aff_Stock.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.DV_aff_Stock.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DV_aff_Stock.Location = new System.Drawing.Point(525, 90);
+            this.DV_aff_Stock.Name = "DV_aff_Stock";
+            this.DV_aff_Stock.ReadOnly = true;
+            this.DV_aff_Stock.Size = new System.Drawing.Size(374, 450);
+            this.DV_aff_Stock.TabIndex = 0;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -350,12 +387,14 @@
             this.panel1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DV_Affiche_Hist)).EndInit();
             this.Commande.ResumeLayout(false);
             this.Commande.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DS_test)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_test)).EndInit();
+            this.tabPage3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.DV_aff_Stock)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -380,7 +419,7 @@
         private System.Windows.Forms.Button supprimeStock;
         private System.Windows.Forms.Button ajoutStock;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView DV_Affiche_Hist;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.Panel panel2;
@@ -390,6 +429,9 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ComboBox selecMedoc;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.DataGridView DV_aff_Stock;
         private System.Windows.Forms.Label label10;
     }
 }

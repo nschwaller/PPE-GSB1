@@ -13,6 +13,13 @@ namespace PPE_GSB1
 {
     public partial class Form1 : Form
     {
+        public void initialisationDataView()
+        {
+            SQL connectBase = new SQL();
+            DV_Affiche_Hist.DataSource = connectBase.ReqHistorique().Tables[0];
+            DV_aff_Stock.DataSource = connectBase.ReqStock().Tables[0];
+        }
+        public Form1()
 
         public void datagried()
         {
