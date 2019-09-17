@@ -19,7 +19,7 @@ namespace PPE_GSB1
             DV_Affiche_Hist.DataSource = connectBase.ReqHistorique().Tables[0];
             DV_aff_Stock.DataSource = connectBase.ReqStock().Tables[0];
         }
-        public Form1()
+       // public Form1()
 
         public void datagried()
         {
@@ -41,6 +41,7 @@ namespace PPE_GSB1
         public Form1()
         {          
             InitializeComponent();
+            initialisationDataView();
             datagried();
         }
 
