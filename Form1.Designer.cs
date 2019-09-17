@@ -80,6 +80,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.BackColor = System.Drawing.Color.Gray;
             this.tabPage1.Controls.Add(this.panel2);
             this.tabPage1.Controls.Add(this.panel1);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
@@ -88,21 +89,18 @@
             this.tabPage1.Size = new System.Drawing.Size(1023, 575);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Stockage";
-            this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // panel2
             // 
-            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel2.Controls.Add(this.label9);
-            this.panel2.Controls.Add(this.label3);
-            this.panel2.Controls.Add(this.ajoutStock);
-            this.panel2.Controls.Add(this.ajoutQuantite);
-            this.panel2.Controls.Add(this.ajoutMedoc);
-            this.panel2.Controls.Add(this.label5);
-            this.panel2.Location = new System.Drawing.Point(6, 6);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(495, 563);
-            this.panel2.TabIndex = 13;
+            this.tabPage2.Controls.Add(this.label6);
+            this.tabPage2.Controls.Add(this.dataGridView1);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(1023, 575);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Stock";
+            this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // panel1
             // 
@@ -118,6 +116,15 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(487, 563);
             this.panel1.TabIndex = 12;
+            this.Commande.BackColor = System.Drawing.Color.Gray;
+            this.Commande.Controls.Add(this.label7);
+            this.Commande.Controls.Add(this.dataGridView2);
+            this.Commande.Location = new System.Drawing.Point(4, 22);
+            this.Commande.Name = "Commande";
+            this.Commande.Padding = new System.Windows.Forms.Padding(3);
+            this.Commande.Size = new System.Drawing.Size(1023, 575);
+            this.Commande.TabIndex = 2;
+            this.Commande.Text = "Commande";
             // 
             // quantiteCommande
             // 
