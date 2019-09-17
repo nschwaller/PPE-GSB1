@@ -77,6 +77,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.BackColor = System.Drawing.Color.Gray;
             this.tabPage1.Controls.Add(this.panel2);
             this.tabPage1.Controls.Add(this.panel1);
             this.tabPage1.Controls.Add(this.textBox2);
@@ -97,10 +98,10 @@
             this.tabPage1.Size = new System.Drawing.Size(1023, 575);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Stockage";
-            this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // tabPage2
             // 
+            this.tabPage2.BackColor = System.Drawing.Color.Gray;
             this.tabPage2.Controls.Add(this.label6);
             this.tabPage2.Controls.Add(this.dataGridView1);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
@@ -109,10 +110,10 @@
             this.tabPage2.Size = new System.Drawing.Size(1023, 575);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Stock";
-            this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // Commande
             // 
+            this.Commande.BackColor = System.Drawing.Color.Gray;
             this.Commande.Controls.Add(this.label7);
             this.Commande.Controls.Add(this.dataGridView2);
             this.Commande.Location = new System.Drawing.Point(4, 22);
@@ -121,7 +122,6 @@
             this.Commande.Size = new System.Drawing.Size(1023, 575);
             this.Commande.TabIndex = 2;
             this.Commande.Text = "Commande";
-            this.Commande.UseVisualStyleBackColor = true;
             // 
             // button1
             // 
