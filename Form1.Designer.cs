@@ -353,6 +353,7 @@
             this.ajouter.TabIndex = 0;
             this.ajouter.Text = "AJOUTER";
             this.ajouter.UseVisualStyleBackColor = true;
+            this.ajouter.Click += new System.EventHandler(this.Ajouter_Click);
             // 
             // medocSelec
             // 

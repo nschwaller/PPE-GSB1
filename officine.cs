@@ -15,9 +15,13 @@ namespace PPE_GSB1
         protected string nom;
         protected int id;
 
-        public officine()
+        public officine(int i, string cp, string v, string nT, string n)
         {
-
+            this.id = i;
+            this.numeroTel = nT;
+            this.codePostal = cp;
+            this.ville = v;
+            this.nom = n;
         }
 
         public string getCPostal()
