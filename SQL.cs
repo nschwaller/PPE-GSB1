@@ -91,7 +91,7 @@ namespace PPE_GSB1
         //REQUETE POUR RECUP LES COMMANDE//
         public DataSet ReqCommand()
         {
-            string sql = "SELECT id_hist as `Id Commande`,date_hist as `Date Commande`,quantite_hist as Quantite, Officine.nom_off as Officine, Medicament.nom_med as Medicament FROM Historique INNER JOIN Officine ON Historique.id_off = Officine.id_off INNER JOIN Medicament ON Historique.id_med = Medicament.id_med WHERE Historique.id_off IS NOT NULL ORDER BY date_hist ASC;";
+            string sql = "SELECT id_hist as `Id Commande`,date_hist as `Date Commande`,quantite_hist as Quantite, Officine.nom_off as Officine, Medicament.nom_med as Medicament FROM Historique INNER JOIN Officine ON Historique.id_off = Officine.id_off INNER JOIN Medicament ON Historique.id_med = Medicament.id_med WHERE Historique.id_off IS NOT NULL ORDER BY date_hist DESC;";
             MySqlCommand maReq = new MySqlCommand(sql, this.conn);
             MySqlDataAdapter mySqlDataAdapter = new MySqlDataAdapter(sql, this.conn);
             DataSet DS = new DataSet();
