@@ -15,6 +15,7 @@ namespace PPE_GSB1
     {
         private List<medicament> lesMedocs = new List<medicament>();
         private List<officine> lesOfficines = new List<officine>();
+        
 
         //public Form1()
         public void initialisationDataView()
@@ -84,7 +85,6 @@ namespace PPE_GSB1
             }
             maConnexion.Close();
         }
-
         private void DataGridView2_UserDeletingRow(object sender, DataGridViewRowCancelEventArgs e)
         {
             foreach (DataGridViewRow row in dataGridView2.SelectedRows)
@@ -140,6 +140,9 @@ namespace PPE_GSB1
             {
                 if (lesMedocs[i].getNomMed() == m)
                 {
+                    SQL connexionbase = new SQL();
+
+                    DataSet stock = connexionbase.ReqStock()
                     for (int j=0; j < lesOfficines.Count; j++)
                     {
                         if (lesOfficines[j].getNom() == o)
@@ -147,7 +150,7 @@ namespace PPE_GSB1
                             string idOff = Convert.ToString(lesOfficines[j].getId());
                             string idMed = Convert.ToString(lesMedocs[i].getIdMed());
                             List<int> lesoffs = new List<int>();
-                            SQL connexionbase = new SQL();
+                            
                             lesoffs = connexionbase.Parapharmacie();
                             bool cestparaph = false;
                             foreach (int officine in lesoffs)
