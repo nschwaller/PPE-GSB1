@@ -18,6 +18,13 @@ namespace PPE_GSB1
         private List<officine> lesOfficines = new List<officine>();
         public SQL connectBase = new SQL();
 
+        public Form1()
+        {
+            InitializeComponent();
+            INITIALISATION();
+            RecuperationMedoOffi();
+        }
+
         //AFFICHAGE HISTORIQUE ET STOCK//
         public void initialisationDataView()
         {        
@@ -32,19 +39,15 @@ namespace PPE_GSB1
             dataGridView2.DataSource = connectBase.ReqCommand().Tables[0];
             dataGridView2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
-
-
-        public Form1()
-        {
-            InitializeComponent();
-            INITIALISATION();
-            RecuperationMedoOffi();
-        }
+        
+        //FONCTION QUI APPEL NOS DEUX FONCTIONS PERMET D'ECRIRE UNE LIGNE AU LIEU DE DEUX//
         private void INITIALISATION()
         {           
             initialisationDataView();
             datagried();    
         }
+
+        //REQUETE POUR RECUP MEDICAMENT ET OFFICINE POUR LES SELECT//
         private void RecuperationMedoOffi()
         {
             lesMedocs = connectBase.ALLMedicament();

@@ -255,6 +255,7 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.BackColor = System.Drawing.Color.Gainsboro;
             this.tabPage3.Controls.Add(this.stock);
             this.tabPage3.Controls.Add(this.DV_aff_Stock);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
@@ -262,7 +263,6 @@
             this.tabPage3.Size = new System.Drawing.Size(1023, 575);
             this.tabPage3.TabIndex = 3;
             this.tabPage3.Text = "Stock";
-            this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // DV_aff_Stock
             // 
