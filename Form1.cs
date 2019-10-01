@@ -70,6 +70,8 @@ namespace PPE_GSB1
                 medocSelec.Items.Add(lesMedocs[i].getNomMed());
                 selecMedoc.Items.Add(lesMedocs[i]);
             }
+            maConnexion.Close();
+            maConnexion.Open();
             MySqlDataReader officine = reqOff.ExecuteReader();
             while (officine.Read())
             {
@@ -143,6 +145,9 @@ namespace PPE_GSB1
                         {
                             string idOff = Convert.ToString(lesOfficines[i].getId());
                             string idMed = Convert.ToString(lesMedocs[i].getIdMed());
+                            string para = "SELECT id_off FROM Parapharmacie";
+                            SQL lareq = new SQL();
+                            MySqlConnection laconnexion = new MySqlConnection(lareq.getconn());
                             string medoc = "INSERT INTO Historique(date_hist, id_med, quantite_hist, id_off) VALUES ( NOW(), '" + idMed + "', '+" + quantite + "', '" + idOff + "')";
                             SQL REQ = new SQL();
                             MySqlConnection maConnexion = new MySqlConnection(REQ.getconn());
