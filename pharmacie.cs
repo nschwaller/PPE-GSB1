@@ -11,9 +11,8 @@ namespace PPE_GSB1
         private int registre_pha;
 
         public Pharmacie()
-        {
-
-        }
+        { }
+        
 
         public int getregistre()
         {

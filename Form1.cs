@@ -16,7 +16,7 @@ namespace PPE_GSB1
         private List<medicament> lesMedocs = new List<medicament>();
         private List<officine> lesOfficines = new List<officine>();
 
-        public Form1()
+        //public Form1()
         public void initialisationDataView()
         {
             SQL connectBase = new SQL();
@@ -24,7 +24,7 @@ namespace PPE_GSB1
             DV_aff_Stock.DataSource = connectBase.ReqStock().Tables[0];
         }
        // public Form1()
-
+       //CODE COMMANDE PAGE 3//
         public void datagried()
         {
             this.dataGridView2.DataSource = null;
@@ -39,9 +39,20 @@ namespace PPE_GSB1
             mySqlDataAdapter.Fill(DS);
             dataGridView2.DataSource = DS.Tables[0];
 
-            maConnexion.Close();*/
+            maConnexion.Close();
 
+            
+       
+            dataGridView2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+        }
+        public Form1()
+        {          
+            InitializeComponent();
+            initialisationDataView();
+            datagried();
             //Partie adam pour ajout medoc dans list and affiche
+            SQL REQ = new SQL();
+            MySqlConnection maConnexion = new MySqlConnection(REQ.getconn());
             maConnexion.Open();
             string medoc = "SELECT * FROM Medicament";
             string off = "SELECT * FROM Officine";
@@ -52,7 +63,7 @@ namespace PPE_GSB1
             while (medicament.Read())
             {
                 medicament leMedoc = new medicament(Convert.ToInt16(medicament["id_med"]), Convert.ToString(medicament["nom_med"]), Convert.ToBoolean(medicament["ordonnance"]));
-                lesMedocs.Add(leMedoc); 
+                lesMedocs.Add(leMedoc);
             }
             for (int i = 0; i < lesMedocs.Count(); i++)
             {
@@ -70,13 +81,6 @@ namespace PPE_GSB1
                 selecOfficine.Items.Add(lesOfficines[i].getNom());
             }
             maConnexion.Close();
-            dataGridView2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-        }
-        public Form1()
-        {          
-            InitializeComponent();
-            initialisationDataView();
-            datagried();
         }
 
         private void DataGridView2_UserDeletingRow(object sender, DataGridViewRowCancelEventArgs e)
@@ -84,15 +88,17 @@ namespace PPE_GSB1
             foreach (DataGridViewRow row in dataGridView2.SelectedRows)
             {
                 string id;
-                id=row.Cells[0].Value.ToString();
+                id = row.Cells[0].Value.ToString();
                 SQL REQ = new SQL();
                 MySqlConnection maConnexion = new MySqlConnection(REQ.getconn());
                 maConnexion.Open();
-                string sql = "DELETE FROM Historique WHERE id_hist =" + id ;
+                string sql = "DELETE FROM Historique WHERE id_hist =" + id;
                 MySqlCommand maReq = new MySqlCommand(sql, maConnexion);
                 maReq.ExecuteNonQuery();
                 maConnexion.Close();
             }
+        }
+
         private void Button4_Click(object sender, EventArgs e)
         {
 
@@ -114,6 +120,8 @@ namespace PPE_GSB1
                     maConnexion.Open();
                     MySqlCommand req = new MySqlCommand(medoc, maConnexion);
                     maConnexion.Close();
+                    initialisationDataView();
+                    datagried();
                     break;
                 }
             }  
@@ -141,6 +149,8 @@ namespace PPE_GSB1
                             maConnexion.Open();
                             MySqlCommand req = new MySqlCommand(medoc, maConnexion);
                             maConnexion.Close();
+                            initialisationDataView();
+                            datagried();
                             break;
                         }
                         

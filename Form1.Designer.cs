@@ -34,7 +34,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
+            this.label99 = new System.Windows.Forms.Label();
             this.medocAjouter = new System.Windows.Forms.TextBox();
             this.medocSelec = new System.Windows.Forms.ComboBox();
             this.ajouter = new System.Windows.Forms.Button();
@@ -115,7 +115,7 @@
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel2.Controls.Add(this.label12);
             this.panel2.Controls.Add(this.label11);
-            this.panel2.Controls.Add(this.label10);
+            this.panel2.Controls.Add(this.label99);
             this.panel2.Controls.Add(this.medocAjouter);
             this.panel2.Controls.Add(this.medocSelec);
             this.panel2.Controls.Add(this.ajouter);
@@ -146,13 +146,13 @@
             // 
             // label10
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(27, 23);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(441, 29);
-            this.label10.TabIndex = 3;
-            this.label10.Text = "Ajouter des Médicaments dans le Stock:";
+            this.label99.AutoSize = true;
+            this.label99.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label99.Location = new System.Drawing.Point(27, 23);
+            this.label99.Name = "label10";
+            this.label99.Size = new System.Drawing.Size(441, 29);
+            this.label99.TabIndex = 3;
+            this.label99.Text = "Ajouter des Médicaments dans le Stock:";
             // 
             // medocAjouter
             // 
@@ -508,7 +508,7 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label99;
         private System.Windows.Forms.TextBox medocAjouter;
         private System.Windows.Forms.ComboBox medocSelec;
         private System.Windows.Forms.Button ajouter;
