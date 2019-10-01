@@ -145,15 +145,34 @@ namespace PPE_GSB1
                         {
                             string idOff = Convert.ToString(lesOfficines[i].getId());
                             string idMed = Convert.ToString(lesMedocs[i].getIdMed());
-                            string para = "SELECT id_off FROM Parapharmacie";
-                            SQL lareq = new SQL();
-                            MySqlConnection laconnexion = new MySqlConnection(lareq.getconn());
-                            string medoc = "INSERT INTO Historique(date_hist, id_med, quantite_hist, id_off) VALUES ( NOW(), '" + idMed + "', '+" + quantite + "', '" + idOff + "')";
-                            SQL REQ = new SQL();
-                            MySqlConnection maConnexion = new MySqlConnection(REQ.getconn());
-                            maConnexion.Open();
-                            MySqlCommand req = new MySqlCommand(medoc, maConnexion);
-                            maConnexion.Close();
+                            List<int> lesoffs = new List<int>();
+                            SQL connexionbase = new SQL();
+                            lesoffs = connexionbase.Parapharmacie();
+                            bool cestparaph = false;
+                            foreach (int officine in lesoffs)
+                            {
+                                if(officine==Convert.ToInt32(idOff))
+                                {
+                                    cestparaph = true;
+                                    break;
+                                }
+                            }
+
+                            if(lesMedocs[i].getOrdonance())
+                            {
+                                if(cestparaph)
+                                {
+                                    MessageBox.Show("Les parapharmacie ne peuvent pas acheter de médicaments sous ordonnance");
+                                }
+                                else
+                                {
+                                    connexionbase.insertHist(idOff, idMed, quantite);
+                                }
+                            }
+                            else
+                            {
+                                connexionbase.insertHist(idOff, idMed, quantite);
+                            }
                             initialisationDataView();
                             datagried();
                             break;

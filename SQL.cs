@@ -47,6 +47,27 @@ namespace PPE_GSB1
             mySqlDataAdapter.Fill(DS);
             return DS;
         }
+
+        public List<int> Parapharmacie()
+        {
+            string para = "SELECT id_off FROM Parapharmacie";
+            List<int> Parapharmacie = new List<int>();
+            MySqlCommand larequete = new MySqlCommand(para, this.conn);
+            MySqlDataReader paraph = larequete.ExecuteReader();
+            while (paraph.Read())
+            {
+                Parapharmacie.Add(Convert.ToInt32(paraph["id_off"]));
+            }
+
+            return Parapharmacie;
+        }
+
+        public void insertHist(string idOFF,string idmed, string quantite)
+        {
+            string medoc = "INSERT INTO Historique(date_hist, id_med, quantite_hist, id_off) VALUES ( NOW(), '" + idmed + "', '+" + quantite + "', '" + idOFF + "')";
+            MySqlCommand req = new MySqlCommand(medoc, this.conn);
+            req.ExecuteNonQuery();
+        }
     }
 }
 
