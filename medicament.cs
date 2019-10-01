@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PPE_GSB1
 {
-    class medicament
+    public class medicament
     {
         private int id_med;
         private string nom_med;

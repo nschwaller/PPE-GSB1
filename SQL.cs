@@ -109,6 +109,39 @@ namespace PPE_GSB1
             this.conn.Close();
         }
         //*******************//
+        //REQUETE POUR RECUP LES Medicament//
+        public List<medicament> ALLMedicament()
+        {
+            string medoc = "SELECT * FROM Medicament";
+            List<medicament> List = new List<medicament>();
+            MySqlCommand larequete = new MySqlCommand(medoc, this.conn);
+            this.conn.Open();
+            MySqlDataReader contenue = larequete.ExecuteReader();
+            while (contenue.Read())
+            {
+                medicament leMedoc = new medicament(Convert.ToInt16(contenue["id_med"]), Convert.ToString(contenue["nom_med"]), Convert.ToBoolean(contenue["ordonnance"]));
+                List.Add(leMedoc);
+            }
+            this.conn.Close();
+            return List;
+        }
+        //*******************//
+        //REQUETE POUR RECUP LES Officine//
+        public List<officine> ALLOfficine()
+        {
+            string off = "SELECT * FROM Officine";
+            List<officine> List = new List<officine>();
+            MySqlCommand larequete = new MySqlCommand(off, this.conn);
+            this.conn.Open();
+            MySqlDataReader contenue = larequete.ExecuteReader();
+            while (contenue.Read())
+            {
+                officine Offi = new officine(Convert.ToInt16(contenue["id_off"]), Convert.ToString(contenue["cp_off"]), Convert.ToString(contenue["ville_off"]), Convert.ToString(contenue["numerot_off"]), Convert.ToString(contenue["nom_off"]));
+                List.Add(Offi);
+            }
+            this.conn.Close();
+            return List;
+        }
     }
 }
 

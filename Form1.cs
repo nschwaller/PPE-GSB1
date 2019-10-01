@@ -35,43 +35,29 @@ namespace PPE_GSB1
 
 
         public Form1()
-        {          
+        {
             InitializeComponent();
+            INITIALISATION();
+            RecuperationMedoOffi();
+        }
+        private void INITIALISATION()
+        {           
             initialisationDataView();
-            datagried();
-            //Partie adam pour ajout medoc dans list and affiche
-            SQL REQ = new SQL();
-            MySqlConnection maConnexion = new MySqlConnection(REQ.getconn());
-            maConnexion.Open();
-            string medoc = "SELECT * FROM Medicament";
-            string off = "SELECT * FROM Officine";
-            MySqlCommand req = new MySqlCommand(medoc, maConnexion);
-            MySqlCommand reqOff = new MySqlCommand(off, maConnexion);
-
-            MySqlDataReader medicament = req.ExecuteReader();
-            while (medicament.Read())
-            {
-                medicament leMedoc = new medicament(Convert.ToInt16(medicament["id_med"]), Convert.ToString(medicament["nom_med"]), Convert.ToBoolean(medicament["ordonnance"]));
-                lesMedocs.Add(leMedoc);
-            }
+            datagried();    
+        }
+        private void RecuperationMedoOffi()
+        {
+            lesMedocs = connectBase.ALLMedicament();
+            lesOfficines = connectBase.ALLOfficine();
             for (int i = 0; i < lesMedocs.Count(); i++)
             {
                 medocSelec.Items.Add(lesMedocs[i].getNomMed());
                 selecMedoc.Items.Add(lesMedocs[i].getNomMed());
             }
-            maConnexion.Close();
-            maConnexion.Open();
-            MySqlDataReader officine = reqOff.ExecuteReader();
-            while (officine.Read())
-            {
-                officine Off = new officine(Convert.ToInt16(officine["id_off"]), Convert.ToString(officine["cp_off"]), Convert.ToString(officine["ville_off"]), Convert.ToString(officine["numerot_off"]), Convert.ToString(officine["nom_off"]));
-                lesOfficines.Add(Off);
-            }
             for (int i = 0; i < lesOfficines.Count(); i++)
             {
                 selecOfficine.Items.Add(lesOfficines[i].getNom());
             }
-            maConnexion.Close();
         }
 
         //SUPPRESSION DES COMMANDES QUAND L'UTILISATEUR SELECTIONNE UNE LIGNE ET APPUIE SUR "SUPPR"//
@@ -97,8 +83,7 @@ namespace PPE_GSB1
                 {
                     int id = lesMedocs[i].getIdMed();
                     connectBase.AjoutMedStock(id, quantite);
-                    initialisationDataView();
-                    datagried();
+                    INITIALISATION();
                     medocSelec.Text = "";
                     medocAjouter.Text = "";
                     break;
@@ -117,9 +102,7 @@ namespace PPE_GSB1
             {
                 if (lesMedocs[i].getNomMed() == m)
                 {
-                    SQL connexionbase = new SQL();
-
-                    DataSet stock = connexionbase.ReqStock();
+                    DataSet stock = connectBase.ReqStock();
                     bool ValideStock = false;
                     foreach (DataRow dr in stock.Tables[0].Rows)
                     {
@@ -141,7 +124,7 @@ namespace PPE_GSB1
                                 string idMed = Convert.ToString(lesMedocs[i].getIdMed());
                                 List<int> lesoffs = new List<int>();
 
-                                lesoffs = connexionbase.Parapharmacie();
+                                lesoffs = connectBase.Parapharmacie();
                                 bool cestparaph = false;
                                 foreach (int officine in lesoffs)
                                 {
@@ -160,15 +143,14 @@ namespace PPE_GSB1
                                     }
                                     else
                                     {
-                                        connexionbase.insertHist(idOff, idMed, quantite);
+                                        connectBase.insertHist(idOff, idMed, quantite);
                                     }
                                 }
                                 else
                                 {
-                                    connexionbase.insertHist(idOff, idMed, quantite);
+                                    connectBase.insertHist(idOff, idMed, quantite);
                                 }
-                                initialisationDataView();
-                                datagried();
+                                INITIALISATION();
                                 quantiteCommande.Text = "";
                                 selecOfficine.Text = "";
                                 selecMedoc.Text = "";
