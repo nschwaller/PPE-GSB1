@@ -30,20 +30,7 @@ namespace PPE_GSB1
         {
             this.dataGridView2.DataSource = null;
             SQL REQ = new SQL();
-            MySqlConnection maConnexion = new MySqlConnection(REQ.getconn());
-            maConnexion.Open();
-            string sql = "SELECT id_hist as `Id Commande`,date_hist as `Date Commande`,quantite_hist as Quantite, Officine.nom_off as Officine, Medicament.nom_med as Medicament FROM Historique INNER JOIN Officine ON Historique.id_off = Officine.id_off INNER JOIN Medicament ON Historique.id_med = Medicament.id_med WHERE Historique.id_off IS NOT NULL ORDER BY date_hist ASC;";
-            MySqlCommand maReq = new MySqlCommand(sql, maConnexion);
-
-            MySqlDataAdapter mySqlDataAdapter = new MySqlDataAdapter(sql, maConnexion);
-            DataSet DS = new DataSet();
-            mySqlDataAdapter.Fill(DS);
-            dataGridView2.DataSource = DS.Tables[0];
-
-            maConnexion.Close();
-
-            
-       
+            dataGridView2.DataSource = REQ.ReqCommand().Tables[0];
             dataGridView2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
         public Form1()
@@ -91,13 +78,8 @@ namespace PPE_GSB1
             {
                 string id;
                 id = row.Cells[0].Value.ToString();
-                SQL REQ = new SQL();
-                MySqlConnection maConnexion = new MySqlConnection(REQ.getconn());
-                maConnexion.Open();
-                string sql = "DELETE FROM Historique WHERE id_hist =" + id;
-                MySqlCommand maReq = new MySqlCommand(sql, maConnexion);
-                maReq.ExecuteNonQuery();
-                maConnexion.Close();
+                SQL connectBase = new SQL();
+                connectBase.supprCommande(id);
             }
         }
         private void Ajouter_Click(object sender, EventArgs e)
