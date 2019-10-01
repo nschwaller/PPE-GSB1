@@ -85,11 +85,54 @@ namespace PPE_GSB1
 
         private void Ajouter_Click(object sender, EventArgs e)
         {
-            object m = medocSelec.SelectedItem;
-            
-            int quantite = Convert.ToInt16(medocAjouter.Text);
+            string m = Convert.ToString(medocSelec.SelectedItem);            
+            string quantite = "+"+medocAjouter.Text;
 
-            string req = "";
+            for (int i=0; i<lesMedocs.Count; i++)
+            {
+                if(lesMedocs[i].getNomMed() == m)
+                {
+                    string id = Convert.ToString(lesMedocs[i].getIdMed());
+                    string medoc = "INSERT INTO Historique(date_hist, id_med, quantite_hist) VALUES ( NOW(), '" + id + "', '" + quantite + "')";
+                    SQL REQ = new SQL();
+                    MySqlConnection maConnexion = new MySqlConnection(REQ.getconn());
+                    maConnexion.Open();
+                    MySqlCommand req = new MySqlCommand(medoc, maConnexion);
+                    maConnexion.Close();
+                    break;
+                }
+            }  
+        }
+
+        private void SupprimeStock_Click(object sender, EventArgs e)
+        {
+            string o = Convert.ToString(selecOfficine.SelectedItem);
+            string m = Convert.ToString(selecMedoc.SelectedItem);
+            string quantite = "-" + quantiteCommande.Text;
+
+            for (int i = 0; i < lesMedocs.Count; i++)
+            {
+                if (lesMedocs[i].getNomMed() == m)
+                {
+                    for (int j=0; j < lesOfficines.Count; j++)
+                    {
+                        if (lesOfficines[i].getNom() == o)
+                        {
+                            string idOff = Convert.ToString(lesOfficines[i].getId());
+                            string idMed = Convert.ToString(lesMedocs[i].getIdMed());
+                            string medoc = "INSERT INTO Historique(date_hist, id_med, quantite_hist, id_off) VALUES ( NOW(), '" + idMed + "', '+" + quantite + "', '" + idOff + "')";
+                            SQL REQ = new SQL();
+                            MySqlConnection maConnexion = new MySqlConnection(REQ.getconn());
+                            maConnexion.Open();
+                            MySqlCommand req = new MySqlCommand(medoc, maConnexion);
+                            maConnexion.Close();
+                            break;
+                        }
+                        
+                    }
+                    
+                }
+            }
         }
     }
 }
