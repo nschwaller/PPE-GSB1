@@ -15,12 +15,13 @@ namespace PPE_GSB1
     {
         private List<medicament> lesMedocs = new List<medicament>();
         private List<officine> lesOfficines = new List<officine>();
-        
+        public SQL connectBase = new SQL();
+
 
         //public Form1()
         public void initialisationDataView()
         {
-            SQL connectBase = new SQL();
+            
             DV_Affiche_Hist.DataSource = connectBase.ReqHistorique().Tables[0];
             DV_aff_Stock.DataSource = connectBase.ReqStock().Tables[0];
         }
@@ -39,10 +40,7 @@ namespace PPE_GSB1
             DataSet DS = new DataSet();
             mySqlDataAdapter.Fill(DS);
             dataGridView2.DataSource = DS.Tables[0];
-
-            maConnexion.Close();
-
-            
+            maConnexion.Close();       
        
             dataGridView2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
@@ -103,20 +101,14 @@ namespace PPE_GSB1
         private void Ajouter_Click(object sender, EventArgs e)
         {
             string m = Convert.ToString(medocSelec.SelectedItem);            
-            string quantite = "+"+medocAjouter.Text;
+            int quantite = Convert.ToInt32(medocAjouter.Text);
 
             for (int i=0; i<lesMedocs.Count; i++)
             {
                 if(lesMedocs[i].getNomMed() == m)
                 {
-                    string id = Convert.ToString(lesMedocs[i].getIdMed());
-                    string medoc = "INSERT INTO Historique(date_hist, id_med, quantite_hist) VALUES ( NOW(), '" + id + "', '" + quantite + "')";
-                    SQL REQ = new SQL();
-                    MySqlConnection maConnexion = new MySqlConnection(REQ.getconn());
-                    maConnexion.Open();
-                    MySqlCommand req = new MySqlCommand(medoc, maConnexion);
-                    req.ExecuteNonQuery();
-                    maConnexion.Close();
+                    int id = lesMedocs[i].getIdMed();
+                    connectBase.AjoutMedStock(id, quantite);
                     initialisationDataView();
                     datagried();
                     medocSelec.Text = "";

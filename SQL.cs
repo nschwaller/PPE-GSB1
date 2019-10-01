@@ -8,7 +8,7 @@ using MySql.Data.MySqlClient;
 
 namespace PPE_GSB1
 {
-    class SQL
+    public class SQL
     {
         private string IP = "172.19.0.4";
         private string USER = "root";
@@ -68,6 +68,14 @@ namespace PPE_GSB1
             string medoc = "INSERT INTO Historique(date_hist, id_med, quantite_hist, id_off) VALUES ( NOW(), '" + idmed + "', '-" + quantite + "', '" + idOFF + "')";
             MySqlCommand req = new MySqlCommand(medoc, this.conn);
             this.conn.Open();
+            req.ExecuteNonQuery();
+            this.conn.Close();
+        }
+        public void AjoutMedStock(int id , int quantite)
+        {
+            string medoc = "INSERT INTO Historique(date_hist, id_med, quantite_hist) VALUES ( NOW(), '" + id + "', '" + quantite + "')";
+            this.conn.Open();
+            MySqlCommand req = new MySqlCommand(medoc, this.conn);
             req.ExecuteNonQuery();
             this.conn.Close();
         }
