@@ -100,12 +100,6 @@ namespace PPE_GSB1
                 maConnexion.Close();
             }
         }
-
-        private void Button4_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void Ajouter_Click(object sender, EventArgs e)
         {
             string m = Convert.ToString(medocSelec.SelectedItem);            
@@ -125,6 +119,8 @@ namespace PPE_GSB1
                     maConnexion.Close();
                     initialisationDataView();
                     datagried();
+                    medocSelec.Text = "";
+                    medocAjouter.Text = "";
                     break;
                 }
             }  
@@ -142,47 +138,66 @@ namespace PPE_GSB1
                 {
                     SQL connexionbase = new SQL();
 
-                    DataSet stock = connexionbase.ReqStock()
-                    for (int j=0; j < lesOfficines.Count; j++)
+                    DataSet stock = connexionbase.ReqStock();
+                    bool ValideStock = false;
+                    foreach (DataRow dr in stock.Tables[0].Rows)
                     {
-                        if (lesOfficines[j].getNom() == o)
+                        if (lesMedocs[i].getNomMed() == dr["Medicament"].ToString())
                         {
-                            string idOff = Convert.ToString(lesOfficines[j].getId());
-                            string idMed = Convert.ToString(lesMedocs[i].getIdMed());
-                            List<int> lesoffs = new List<int>();
-                            
-                            lesoffs = connexionbase.Parapharmacie();
-                            bool cestparaph = false;
-                            foreach (int officine in lesoffs)
+                            if(Convert.ToInt64(dr["Quantite"].ToString())>= Convert.ToInt64(quantite))
                             {
-                                if(officine==Convert.ToInt32(idOff))
-                                {
-                                    cestparaph = true;
-                                    break;
-                                }
-                            }
+                                ValideStock = true;
+                            }                                
+                        }
+                    }
+                    if (ValideStock)
+                    {
+                        for (int j = 0; j < lesOfficines.Count; j++)
+                        {
+                            if (lesOfficines[j].getNom() == o)
+                            {
+                                string idOff = Convert.ToString(lesOfficines[j].getId());
+                                string idMed = Convert.ToString(lesMedocs[i].getIdMed());
+                                List<int> lesoffs = new List<int>();
 
-                            if(lesMedocs[i].getOrdonance())
-                            {
-                                if(cestparaph)
+                                lesoffs = connexionbase.Parapharmacie();
+                                bool cestparaph = false;
+                                foreach (int officine in lesoffs)
                                 {
-                                    MessageBox.Show("Les parapharmacie ne peuvent pas acheter de médicaments sous ordonnance");
+                                    if (officine == Convert.ToInt32(idOff))
+                                    {
+                                        cestparaph = true;
+                                        break;
+                                    }
+                                }
+
+                                if (lesMedocs[i].getOrdonance())
+                                {
+                                    if (cestparaph)
+                                    {
+                                        MessageBox.Show("Les parapharmacie ne peuvent pas acheter de médicaments sous ordonnance");
+                                    }
+                                    else
+                                    {
+                                        connexionbase.insertHist(idOff, idMed, quantite);
+                                    }
                                 }
                                 else
                                 {
                                     connexionbase.insertHist(idOff, idMed, quantite);
                                 }
+                                initialisationDataView();
+                                datagried();
+                                quantiteCommande.Text = "";
+                                selecOfficine.Text = "";
+                                selecMedoc.Text = "";
+                                break;
                             }
-                            else
-                            {
-                                connexionbase.insertHist(idOff, idMed, quantite);
-                            }
-                            initialisationDataView();
-                            datagried();
-                            break;
+
                         }
-                        
                     }
+                    else
+                        MessageBox.Show("Nous avons pas assez de ce Medicament en stock ");
                     
                 }
             }
