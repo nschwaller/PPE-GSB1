@@ -74,7 +74,7 @@ namespace PPE_GSB1
             }
         }
 
-        //BOUTON AJOUTER POUR AJOUTER LES MEDICAMENTS AU STOCK//
+        //BOUTON AJOUTER POUR AJOUTER LES MEDICAMENTS AU STOCK
         private void Ajouter_Click(object sender, EventArgs e)
         {
             string m = Convert.ToString(medocSelec.SelectedItem);            
