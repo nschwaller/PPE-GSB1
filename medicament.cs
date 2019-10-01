@@ -12,8 +12,11 @@ namespace PPE_GSB1
         private string nom_med;
         private bool ordonnance;
 
-        public medicament()
+        public medicament(int id, string nom, bool ordo)
         {
+            this.id_med = id;
+            this.nom_med = nom;
+            this.ordonnance = ordo;
         }
 
         public int getIdMed()

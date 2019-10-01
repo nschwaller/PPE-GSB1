@@ -32,6 +32,12 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.medocAjouter = new System.Windows.Forms.TextBox();
+            this.medocSelec = new System.Windows.Forms.ComboBox();
+            this.ajouter = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.selecOfficine = new System.Windows.Forms.ComboBox();
             this.quantiteCommande = new System.Windows.Forms.TextBox();
@@ -60,6 +66,7 @@
             this.DV_aff_Stock = new System.Windows.Forms.DataGridView();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DV_Affiche_Hist)).BeginInit();
@@ -105,10 +112,73 @@
             // 
             // panel2
             // 
-            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel2.Controls.Add(this.label12);
+            this.panel2.Controls.Add(this.label11);
+            this.panel2.Controls.Add(this.label10);
+            this.panel2.Controls.Add(this.medocAjouter);
+            this.panel2.Controls.Add(this.medocSelec);
+            this.panel2.Controls.Add(this.ajouter);
+            this.panel2.Location = new System.Drawing.Point(6, 6);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(524, 569);
+            this.panel2.Size = new System.Drawing.Size(481, 563);
             this.panel2.TabIndex = 0;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(29, 218);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(142, 20);
+            this.label12.TabIndex = 5;
+            this.label12.Text = "Saisir la Quantitée:";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(29, 99);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(217, 20);
+            this.label11.TabIndex = 4;
+            this.label11.Text = "Sélectionner le Médicaments:";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(27, 23);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(441, 29);
+            this.label10.TabIndex = 3;
+            this.label10.Text = "Ajouter des Médicaments dans le Stock:";
+            // 
+            // medocAjouter
+            // 
+            this.medocAjouter.Location = new System.Drawing.Point(29, 261);
+            this.medocAjouter.Name = "medocAjouter";
+            this.medocAjouter.Size = new System.Drawing.Size(100, 20);
+            this.medocAjouter.TabIndex = 2;
+            // 
+            // medocSelec
+            // 
+            this.medocSelec.FormattingEnabled = true;
+            this.medocSelec.Location = new System.Drawing.Point(29, 144);
+            this.medocSelec.Name = "medocSelec";
+            this.medocSelec.Size = new System.Drawing.Size(217, 21);
+            this.medocSelec.TabIndex = 1;
+            // 
+            // ajouter
+            // 
+            this.ajouter.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ajouter.Location = new System.Drawing.Point(3, 329);
+            this.ajouter.Name = "ajouter";
+            this.ajouter.Size = new System.Drawing.Size(471, 80);
+            this.ajouter.TabIndex = 0;
+            this.ajouter.Text = "AJOUTER";
+            this.ajouter.UseVisualStyleBackColor = true;
+            this.ajouter.Click += new System.EventHandler(this.Ajouter_Click);
             // 
             // panel1
             // 
@@ -149,6 +219,7 @@
             this.supprimeStock.TabIndex = 1;
             this.supprimeStock.Text = "ENVOYER";
             this.supprimeStock.UseVisualStyleBackColor = true;
+            this.supprimeStock.Click += new System.EventHandler(this.SupprimeStock_Click);
             // 
             // label2
             // 
@@ -383,6 +454,8 @@
             this.Text = "Form1";
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
@@ -433,6 +506,12 @@
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.DataGridView DV_aff_Stock;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox medocAjouter;
+        private System.Windows.Forms.ComboBox medocSelec;
+        private System.Windows.Forms.Button ajouter;
     }
 }
 
