@@ -68,7 +68,7 @@ namespace PPE_GSB1
             for (int i = 0; i < lesMedocs.Count(); i++)
             {
                 medocSelec.Items.Add(lesMedocs[i].getNomMed());
-                selecMedoc.Items.Add(lesMedocs[i]);
+                selecMedoc.Items.Add(lesMedocs[i].getNomMed());
             }
             maConnexion.Close();
             maConnexion.Open();
@@ -121,6 +121,7 @@ namespace PPE_GSB1
                     MySqlConnection maConnexion = new MySqlConnection(REQ.getconn());
                     maConnexion.Open();
                     MySqlCommand req = new MySqlCommand(medoc, maConnexion);
+                    req.ExecuteNonQuery();
                     maConnexion.Close();
                     initialisationDataView();
                     datagried();
@@ -133,7 +134,7 @@ namespace PPE_GSB1
         {
             string o = Convert.ToString(selecOfficine.SelectedItem);
             string m = Convert.ToString(selecMedoc.SelectedItem);
-            string quantite = "-" + quantiteCommande.Text;
+            string quantite = quantiteCommande.Text;
 
             for (int i = 0; i < lesMedocs.Count; i++)
             {
@@ -141,9 +142,9 @@ namespace PPE_GSB1
                 {
                     for (int j=0; j < lesOfficines.Count; j++)
                     {
-                        if (lesOfficines[i].getNom() == o)
+                        if (lesOfficines[j].getNom() == o)
                         {
-                            string idOff = Convert.ToString(lesOfficines[i].getId());
+                            string idOff = Convert.ToString(lesOfficines[j].getId());
                             string idMed = Convert.ToString(lesMedocs[i].getIdMed());
                             List<int> lesoffs = new List<int>();
                             SQL connexionbase = new SQL();
