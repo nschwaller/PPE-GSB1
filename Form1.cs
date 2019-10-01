@@ -13,27 +13,27 @@ namespace PPE_GSB1
 {
     public partial class Form1 : Form
     {
+
         private List<medicament> lesMedocs = new List<medicament>();
         private List<officine> lesOfficines = new List<officine>();
         public SQL connectBase = new SQL();
 
-
-        //public Form1()
+        //AFFICHAGE HISTORIQUE ET STOCK//
         public void initialisationDataView()
-        {
-            
+        {        
             DV_Affiche_Hist.DataSource = connectBase.ReqHistorique().Tables[0];
             DV_aff_Stock.DataSource = connectBase.ReqStock().Tables[0];
         }
-       // public Form1()
-       //CODE COMMANDE PAGE 3//
+
+       //AFFICHAGE COMMANDE//
         public void datagried()
         {
             this.dataGridView2.DataSource = null;
-            SQL REQ = new SQL();
-            dataGridView2.DataSource = REQ.ReqCommand().Tables[0];
+            dataGridView2.DataSource = connectBase.ReqCommand().Tables[0];
             dataGridView2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
+
+
         public Form1()
         {
             InitializeComponent();
@@ -59,6 +59,8 @@ namespace PPE_GSB1
                 selecOfficine.Items.Add(lesOfficines[i].getNom());
             }
         }
+
+        //SUPPRESSION DES COMMANDES QUAND L'UTILISATEUR SELECTIONNE UNE LIGNE ET APPUIE SUR "SUPPR"//
         private void DataGridView2_UserDeletingRow(object sender, DataGridViewRowCancelEventArgs e)
         {
             foreach (DataGridViewRow row in dataGridView2.SelectedRows)
@@ -68,6 +70,8 @@ namespace PPE_GSB1
                 connectBase.supprCommande(id);
             }
         }
+
+        //BOUTON AJOUTER POUR AJOUTER LES MEDICAMENTS AU STOCK//
         private void Ajouter_Click(object sender, EventArgs e)
         {
             string m = Convert.ToString(medocSelec.SelectedItem);            
@@ -87,6 +91,7 @@ namespace PPE_GSB1
             }  
         }
 
+        //BOUTON ENVOYER POUR ENVOYER LES MEDICAMENTS AUX OFFICINES EN TESTANT LA QUANTITE EN STOCK ET SI IL FAUT UNE ORDONANCE//
         private void SupprimeStock_Click(object sender, EventArgs e)
         {
             string o = Convert.ToString(selecOfficine.SelectedItem);

@@ -64,6 +64,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.DS_test = new System.Data.DataSet();
             this.DGV_test = new System.Windows.Forms.DataGridView();
+            this.stock = new System.Windows.Forms.Label();
+            this.hist = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -253,6 +255,7 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.stock);
             this.tabPage3.Controls.Add(this.DV_aff_Stock);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
@@ -269,10 +272,10 @@
             this.DV_aff_Stock.AllowUserToResizeRows = false;
             this.DV_aff_Stock.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DV_aff_Stock.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DV_aff_Stock.Location = new System.Drawing.Point(525, 90);
+            this.DV_aff_Stock.Location = new System.Drawing.Point(28, 73);
             this.DV_aff_Stock.Name = "DV_aff_Stock";
             this.DV_aff_Stock.ReadOnly = true;
-            this.DV_aff_Stock.Size = new System.Drawing.Size(374, 450);
+            this.DV_aff_Stock.Size = new System.Drawing.Size(967, 475);
             this.DV_aff_Stock.TabIndex = 0;
             // 
             // Commande
@@ -325,6 +328,7 @@
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.Color.Gainsboro;
+            this.tabPage2.Controls.Add(this.hist);
             this.tabPage2.Controls.Add(this.label6);
             this.tabPage2.Controls.Add(this.DV_Affiche_Hist);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
@@ -353,10 +357,10 @@
             this.DV_Affiche_Hist.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.DV_Affiche_Hist.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DV_Affiche_Hist.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnKeystroke;
-            this.DV_Affiche_Hist.Location = new System.Drawing.Point(31, 33);
+            this.DV_Affiche_Hist.Location = new System.Drawing.Point(32, 88);
             this.DV_Affiche_Hist.Name = "DV_Affiche_Hist";
             this.DV_Affiche_Hist.ReadOnly = true;
-            this.DV_Affiche_Hist.Size = new System.Drawing.Size(977, 522);
+            this.DV_Affiche_Hist.Size = new System.Drawing.Size(976, 467);
             this.DV_Affiche_Hist.TabIndex = 0;
             // 
             // ajoutMedoc
@@ -444,6 +448,26 @@
             this.DGV_test.Size = new System.Drawing.Size(240, 150);
             this.DGV_test.TabIndex = 1;
             // 
+            // stock
+            // 
+            this.stock.AutoSize = true;
+            this.stock.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.stock.Location = new System.Drawing.Point(322, 16);
+            this.stock.Name = "stock";
+            this.stock.Size = new System.Drawing.Size(399, 33);
+            this.stock.TabIndex = 2;
+            this.stock.Text = "Stock de chaque médicament";
+            // 
+            // hist
+            // 
+            this.hist.AutoSize = true;
+            this.hist.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.hist.Location = new System.Drawing.Point(211, 30);
+            this.hist.Name = "hist";
+            this.hist.Size = new System.Drawing.Size(667, 33);
+            this.hist.TabIndex = 2;
+            this.hist.Text = "Historique des rentrées et sorties de médicaments";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -459,6 +483,7 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.tabPage3.ResumeLayout(false);
+            this.tabPage3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DV_aff_Stock)).EndInit();
             this.Commande.ResumeLayout(false);
             this.Commande.PerformLayout();
@@ -512,6 +537,8 @@
         private System.Windows.Forms.TextBox medocAjouter;
         private System.Windows.Forms.ComboBox medocSelec;
         private System.Windows.Forms.Button ajouter;
+        private System.Windows.Forms.Label stock;
+        private System.Windows.Forms.Label hist;
     }
 }
 

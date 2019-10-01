@@ -77,6 +77,8 @@ namespace PPE_GSB1
             req.ExecuteNonQuery();
             this.conn.Close();
         }
+        //*******************//
+        //REQUETE POUR AJOUTER UN MEDOC AU STOCK//
         public void AjoutMedStock(int id , int quantite)
         {
             string medoc = "INSERT INTO Historique(date_hist, id_med, quantite_hist) VALUES ( NOW(), '" + id + "', '" + quantite + "')";
